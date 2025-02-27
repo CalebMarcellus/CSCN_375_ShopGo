@@ -209,3 +209,91 @@ button {
     margin: 10px;
     
 }
+
+/*This will hand the error message css*/
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+.input-control input {
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.input-control.success input{
+    border-color: #09c372;
+}
+.input-control.error input{
+    border-color: #ff3860;
+}
+.input-control .error {
+    color: #ff3860;
+    font-size: 11px;
+    height: 13px;
+    text-align: left;
+    vertical-align: text-top;
+    margin-bottom: 10px;
+}
+.error {
+    color:#ff3860;
+}
+
+
+
+
+
+
+
+/* Container to center content */
+#profile-content {
+    display: flex;
+    flex-direction: column;
+}
+#profile-text {
+    
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px;
+    
+}
+#user-info {
+    flex-direction: row;
+}
+/* Section Styling */
+#preferences, #Account-Settings {
+    background-color: #d7d1d1;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+#preferences h2, #Account-Settings h2 {
+    color: #333;
+}
+
+/* Styling for the content inside each section */
+#preferences p, #Account-Settings p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Styling for bold labels */
+strong {
+    color: #333;
+}
+
+/* Optional: Add a border between the two sections */
+#preferences {
+    border-bottom: 2px solid #e1e1e1;
+}
+
