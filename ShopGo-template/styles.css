@@ -1,4 +1,7 @@
-
+*body{
+    margin:0%;
+    padding: 0%;
+}
 
 #logo-bar {
     display: flex; /* Enable flexbox */
@@ -8,8 +11,7 @@
     padding: 0%;
 }
 #logo-bar img {
-width: 200px;
-
+    width:5rem;
 }
 .center-content {
     margin:auto;
