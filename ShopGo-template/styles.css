@@ -1,6 +1,8 @@
-*body{
-    margin:0%;
-    padding: 0%;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding: 0px;
+    margin: 0px;
 }
 
 #logo-bar {
@@ -11,53 +13,63 @@
     padding: 0%;
 }
 #logo-bar img {
-    width:5rem;
+    width: 10rem;
 }
+
+#NavLists{
+    text-align: center;
+    margin-top: 10px;
+}
+
 .center-content {
     margin:auto;
     text-align: center;
 }
 .main-nav {
-    overflow: hidden;
-    background-color: lightgray;
-    justify-content: center;
+    background-color: #333;
+    text-align: center;
 }
-.main-nav {
-    text-decoration: none;
-    display: flex;
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 .main-nav li {
-   
-    float: left;
-    list-style-type: none;
-    text-decoration: none;
-    font-size: 17px;
+    display: inline;
+    margin-right: 20px;
 }
 .main-nav a {
-    color: black;
-    padding: 15px;
+    color: white;
     text-decoration: none;
-    margin:auto;
+    font-size: 18px;
 }
 
 .main-nav a:hover {
-    background-color: darkgray;
-    color: black;
-  }
+    color: yellow;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
 
 
 footer {
     
-    bottom: 0;
-    width: 100%;
-    background-color: lightgray;
-    margin: 0;
-    padding-top: 5px;
-    padding-bottom: 15px;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
 }
 
 footer li{
-    margin:auto;
+    margin: 0 10px;
     list-style-type: none;
 }
 /* CSS for the list page */
@@ -67,14 +79,6 @@ footer li{
     text-align: center;
     padding: 10px;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    
-    padding: 0;
-    
-}
-
 .container {
     padding: 20px;
 }
@@ -156,7 +160,7 @@ body {
     border: 2px solid #ddd;
     border-radius: 8px;
 }
-input[type=text] input[type=password] input[type=email] {
+input[type=text], input[type=password], input[type=email] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -207,11 +211,6 @@ form button {
     align-items: center;
     
 }
-button {
-    margin: 10px;
-    
-}
-
 /*This will hand the error message css*/
 .input-control {
     display: flex;
@@ -266,7 +265,9 @@ button {
     
 }
 #user-info {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 /* Section Styling */
 #preferences, #Account-Settings {

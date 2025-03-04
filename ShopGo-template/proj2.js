@@ -22,18 +22,14 @@ form.addEventListener("submit", function(event) {
 
 function calculateDOB(currYear, userAge) {
 //calculates year of birth
-let BirthYear = currYear - userAge;
-console.log("Date of Birth calculated.");
-return BirthYear;
+    return currYear - userAge;
 }
 
- function setError(element, message)
-{   //goes into the div element in html then searches p tag to 
+ function setError(element, message) {  
+    //goes into the div element in html then searches p tag to 
     // add a message to it. 
     const formcontrol = element.parentElement;
     const errorDisplay = formcontrol.querySelector('.error');
-    
-
     errorDisplay.innerText = message;
     //formcontrol.classlist.add('error');
     //formcontrol.classlist.remove('success');
