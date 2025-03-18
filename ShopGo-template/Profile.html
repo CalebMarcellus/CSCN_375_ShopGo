@@ -9,60 +9,75 @@
     <!-- Link to external CSS file (optional) -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script defer src="proj2.js"></script>
+    <script defer>
+        function calculateDOB(currYear, userAge) {
+        //calculates year of birth
+        let BirthYear = currYear - userAge;
+        console.log("Date of Birth calculated.");
+        return BirthYear;
+        }
+        const name = document.getElementById('display_name');
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        const emailDisplay = document.getElementById('display_email');
+        const AgeDisplay = document.getElementById('display_age');
+
+        let BirthYear = calculateDOB(2025,age.value.trim());
+        
+        welcomeMessage.innerHTML = `Hi ${username.value},
+        Congratulations on creating your new account with Shop and Go! We're excited to have you on board and look forward to helping you find everything you need with ease. 
+        We noticed that you were born in ${BirthYear}—that's awesome! Its always great to have people of all ages shopping with us. Whether you're here to explore the latest gadgets, fashion, or home goods, we've got something for everyone."`;
+
+        name.innerHTML = "<strong>Username: </strong>" + username.value;
+        emailDisplay.innerHTML = "<strong>Email: </strong>" + email.value;
+        AgeDisplay.innerHTML = "<strong>Age: </strong>" + age.value;
+
+    </script>
     
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
+        <div id="profile-logo" class="logo-bar">
+            <img src="Logo.png">
+            
+        </div>
         <nav class="main-nav">
-            <div id="logo-bar">
-                <img src="Logo.png">
-            </div>
-            </div id="NavLists">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="list.html">Grocery List</a></li>
-                    <li><a href="map.html">Map</a></li>
-                    <li><a href="Profile.html">Profile</a></li>
-                </ul>
-             </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list.html">Grocery List</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+            </ul>
         </nav>
     </header>
 
     <!-- Main Content Section -->
     <main class="center-content" id="profile-content">
-        <h2>Login</h2>
-        <p>Please enter your username and Password</p>
-        <!--For error checking-->
+        <div id="profile-text">
+            <h2>Welcome to Your Profile</h2>
+            <p id="welcomeMessage"></p>
+        </div>
+
         
-        <section id="Login">
-        
-            <form action="/Profile.html" method="post" id="profileform">
-                <div class="input-control">
-                    <label for="name">Username:</label>
-                    <input type="text" id="name" name="name" >
-                    <div class="error" id="name_error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" >
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password">Password:</label>
-                    <input type="text" id="password" name="password" >
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" >
-                    <div class="error"></div>
-                </div>
-                <button type="submit" id="profileSubmit">Submit</button>
-            </form>
-        </section>
+    <section id="user-info">
+        <div id="preferences">
+            <h2>Shopping Preferences</h2>
+            <p><strong>Preferred Categories:</strong> Electronics, Home Appliances</p>
+            <p><strong>Favorite Brands:</strong> Samsung, LG, Sony</p>
+            <p><strong>Shopping Frequency:</strong> Monthly</p>
+            <p><strong>Payment Method:</strong> Credit Card</p>
+        </div>
+
+    <!-- Account Information Section -->
+        <div id="Account-Settings">
+            <h2>Account Information</h2>
+            <p id="display_name"><strong>Username:</strong> john_doe123</p>
+            <p id="display_email"><strong>Email:</strong> johndoe@example.com</p>
+            <p><strong>Phone Number:</strong> (123) 456-7890</p>
+            <p id="display_age"><strong>Age</strong></p>
+        </div>
+    </section>
    
        
     </main>

@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
     <link rel="stylesheet" href="styles.css">
-
+    <script src="proj3.js" defer></script>
 </head>
 <body>
     <header>
+        <div id="list-logo" class="logo-bar">
+            <img src="Logo.png">
+            
+        </div>
         <nav class="main-nav">
-            <div id="logo-bar">
-                <img src="Logo.png">
-                
-            </div>
-            </div id="NavLists">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="list.html">Grocery List</a></li>
-                    <li><a href="map.html">Map</a></li>
-                    <li><a href="Profile.html">Profile</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list.html">Grocery List</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="login.html">Profile</a></li>
+            </ul>
         </nav>
         <div id="list-heading">
             <h1>Grocery List</h1>
@@ -31,8 +29,10 @@
     <main class="center-content">
         <div class="item-search-bar">
             <input type="text" id="item" placeholder="Enter grocery item">
-            <button>Add to List</button>
+            <button id="addList">Add to List</button>
+            <p></p>
             <ul id="groceryList"></ul>
+            
         </div>
     </main>
     <!-- Footer Section -->

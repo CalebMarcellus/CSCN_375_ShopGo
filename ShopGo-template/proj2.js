@@ -15,21 +15,37 @@ form.addEventListener("submit", function(event) {
     
     
     //if the input from the user is good then display account
-    if (validateinput()){
-        displayprofile();
+    if (validateinput() || password.value === ''){
+        window.location.href = "Profile.html";
+        
     }
 });
-
+// Function to login a user
+function loginUser(username, password) {
+    let users = JSON.parse(localStorage.getItem('users')) || {};
+    
+    if (users[username] && users[username] === password) {
+        console.log('Login successful!');
+        return true;
+    } else {
+        console.log('Invalid username or password.');
+        return false;
+    }
+}
 function calculateDOB(currYear, userAge) {
 //calculates year of birth
-    return currYear - userAge;
+let BirthYear = currYear - userAge;
+console.log("Date of Birth calculated.");
+return BirthYear;
 }
 
- function setError(element, message) {  
-    //goes into the div element in html then searches p tag to 
+ function setError(element, message)
+{   //goes into the div element in html then searches p tag to 
     // add a message to it. 
     const formcontrol = element.parentElement;
     const errorDisplay = formcontrol.querySelector('.error');
+    
+
     errorDisplay.innerText = message;
     //formcontrol.classlist.add('error');
     //formcontrol.classlist.remove('success');
@@ -56,20 +72,20 @@ function validateinput() {
     let isvalid = true;
 
     
-    if (namevalue === ''){
+    if (passwordValue === ''){
         //checks to see if name field is not put in
         setError(password,'Password is a required field!');
         //log error to console
         console.error("No input provided.");
-        let isvalid = false;
+        isvalid = false;
         
     }
-    else if (passwordValue.length <= 10 && passwordValue.length > 0)
+    else if (passwordValue.length < 10 && passwordValue.length > 0)
     {
         //passwords must be larger than 10 characters
         console.error("Invalid input provided for password.");
         setError(password, 'Password must be at least 10 characters long');
-        let isvalid = false;
+        isvalid = false;
     }
     else {
         setSuccess(password);
@@ -112,29 +128,7 @@ function validateinput() {
 }
 
 function displayprofile() {
-    mainContent.innerHTML = `           <div id="profile-text">
-                <h2>Welcome to Your Profile</h2>
-                <p id="welcomeMessage"></p>
-            </div>
-            
-        <section id="user-info">
-       <div id="preferences">
-            <h2>Shopping Preferences</h2>
-            <p><strong>Preferred Categories:</strong> Electronics, Home Appliances</p>
-            <p><strong>Favorite Brands:</strong> Samsung, LG, Sony</p>
-            <p><strong>Shopping Frequency:</strong> Monthly</p>
-            <p><strong>Payment Method:</strong> Credit Card</p>
-        </div>
-
-        <!-- Account Information Section -->
-        <div id="Account-Settings">
-            <h2>Account Information</h2>
-            <p id="display_name"><strong>Username:</strong> john_doe123</p>
-            <p id="display_email"><strong>Email:</strong> johndoe@example.com</p>
-            <p><strong>Phone Number:</strong> (123) 456-7890</p>
-            <p id="display_age"><strong>Age</strong></p>
-        </div>
-        </section> `;
+    
 
         const name = document.getElementById('display_name');
         const welcomeMessage = document.getElementById('welcomeMessage');
